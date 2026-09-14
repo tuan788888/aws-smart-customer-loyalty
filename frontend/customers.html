@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khách hàng - Smart Loyalty</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            ⭐ SMART LOYALTY
+        </div>
+
+        <div class="menu">
+            <a href="dashboard.html" class="menu-item">
+                🏠 Dashboard
+            </a>
+            <a href="customers.html" class="menu-item active">
+                👥 Khách hàng
+            </a>
+            <a href="transactions.html" class="menu-item">
+                🛒 Giao dịch
+            </a>
+        </div>
+
+        <div class="logout-area">
+            <button onclick="logout()" class="logout-button">
+                🚪 Đăng xuất
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h2>Khách hàng</h2>
+                <p>Quản lý thông tin khách hàng</p>
+            </div>
+
+            <div class="admin-info">
+                <div class="admin-avatar">A</div>
+                <div>
+                    <strong>Admin</strong>
+                    <small>Quản trị viên</small>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard">
+
+            <div class="page-title">
+                <div>
+                    <h1>Danh sách khách hàng</h1>
+                    <p class="dashboard-description">
+                        Quản lý thông tin và điểm tích lũy của khách hàng.
+                    </p>
+                </div>
+
+                <button class="primary-button" onclick="openAddCustomer()">
+                    + Thêm khách hàng
+                </button>
+            </div>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔍 Tìm theo tên, email hoặc số điện thoại...">
+            </div>
+
+            <div class="dashboard-section">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Khách hàng</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Điểm</th>
+                                <th>Hạng</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customerTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="customerModal" class="modal">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 id="modalTitle">Thêm khách hàng</h2>
+                <button class="close-button" onclick="closeModal()">×</button>
+            </div>
+
+            <form id="customerForm">
+                <input type="hidden" id="customerId">
+
+                <div class="form-row">
+                    <div class="modal-form-group">
+                        <label>Họ và tên</label>
+                        <input type="text" id="customerName" placeholder="Nhập họ tên" required>
+                    </div>
+
+                    <div class="modal-form-group">
+                        <label>Email</label>
+                        <input type="email" id="customerEmail" placeholder="Nhập email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="modal-form-group">
+                        <label>Số điện thoại</label>
+                        <input type="text" id="customerPhone" placeholder="Nhập số điện thoại" required>
+                    </div>
+
+                    <div class="modal-form-group">
+                        <label>Điểm</label>
+                        <input type="number" id="customerPoints" placeholder="Nhập điểm" min="0" value="0" required>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-button" onclick="closeModal()">
+                        Hủy
+                    </button>
+
+                    <button type="submit" class="primary-button">
+                        Lưu khách hàng
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="js/customers.js"></script>
+
+</body>
+
+</html>

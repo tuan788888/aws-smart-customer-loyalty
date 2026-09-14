@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Smart Loyalty</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <div class="logo">
+                ⭐
+            </div>
+
+            <h1>SMART LOYALTY</h1>
+
+            <p class="subtitle">
+                Hệ thống quản lý tích điểm khách hàng
+            </p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Nhập email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Nhập mật khẩu"
+                        required
+                    >
+                </div>
+
+                <div id="errorMessage" class="error-message"></div>
+
+                <button type="submit" class="login-button">
+                    ĐĂNG NHẬP
+                </button>
+
+            </form>
+
+            <p class="demo-account">
+                Tài khoản demo:
+                <br>
+                Email: admin@gmail.com
+                <br>
+                Mật khẩu: 123456
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="js/login.js"></script>
+
+</body>
+</html>

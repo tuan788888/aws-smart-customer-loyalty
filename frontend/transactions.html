@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao dịch - Smart Loyalty</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            ⭐ SMART LOYALTY
+        </div>
+
+        <div class="menu">
+            <a href="dashboard.html" class="menu-item">
+                🏠 Dashboard
+            </a>
+            <a href="customers.html" class="menu-item">
+                👥 Khách hàng
+            </a>
+            <a href="transactions.html" class="menu-item active">
+                🛒 Giao dịch
+            </a>
+        </div>
+
+        <div class="logout-area">
+            <button onclick="logout()" class="logout-button">
+                🚪 Đăng xuất
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h2>Giao dịch</h2>
+                <p>Quản lý giao dịch và tích điểm</p>
+            </div>
+
+            <div class="admin-info">
+                <div class="admin-avatar">A</div>
+                <div>
+                    <strong>Admin</strong>
+                    <small>Quản trị viên</small>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard">
+
+            <div class="page-title">
+                <div>
+                    <h1>Quản lý giao dịch</h1>
+                    <p class="dashboard-description">
+                        Tạo giao dịch và cộng điểm cho khách hàng.
+                    </p>
+                </div>
+
+                <button class="primary-button" onclick="openTransactionModal()">
+                    + Tạo giao dịch
+                </button>
+            </div>
+
+            <div class="statistics transaction-statistics">
+
+                <div class="stat-card">
+                    <div class="stat-icon">🛒</div>
+                    <div>
+                        <p>Tổng giao dịch</p>
+                        <h2 id="totalTransactions">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div>
+                        <p>Tổng tiền</p>
+                        <h2 id="totalAmount">0đ</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div>
+                        <p>Tổng điểm</p>
+                        <h2 id="totalPoints">0</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Lịch sử giao dịch</h2>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã GD</th>
+                                <th>Khách hàng</th>
+                                <th>Số tiền</th>
+                                <th>Điểm</th>
+                                <th>Ngày giao dịch</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="transactionModal" class="modal">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Tạo giao dịch</h2>
+                <button class="close-button" onclick="closeTransactionModal()">×</button>
+            </div>
+
+            <form id="transactionForm">
+
+                <div class="modal-form-group">
+                    <label>Khách hàng</label>
+                    <select id="transactionCustomer" required>
+                        <option value="">-- Chọn khách hàng --</option>
+                    </select>
+                </div>
+
+                <div class="modal-form-group">
+                    <label>Số tiền mua hàng</label>
+                    <input type="number" id="transactionAmount" placeholder="Ví dụ: 500000" min="1000" required>
+                </div>
+
+                <div class="point-preview">
+                    <span>Điểm khách hàng nhận được:</span>
+                    <strong id="pointPreview">0 điểm</strong>
+                </div>
+
+                <div class="modal-form-group">
+                    <label>Ghi chú</label>
+                    <textarea id="transactionNote" placeholder="Nhập ghi chú nếu có..."></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-button" onclick="closeTransactionModal()">
+                        Hủy
+                    </button>
+
+                    <button type="submit" class="primary-button">
+                        Tạo giao dịch
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="js/transactions.js"></script>
+
+</body>
+
+</html>

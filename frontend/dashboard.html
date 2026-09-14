@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart Loyalty</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+            ⭐ SMART LOYALTY
+        </div>
+
+        <div class="menu">
+
+            <a href="dashboard.html" class="menu-item active">
+                🏠 Dashboard
+            </a>
+
+            <a href="customers.html" class="menu-item">
+                👥 Khách hàng
+            </a>
+
+            <a href="transactions.html" class="menu-item">
+                🛒 Giao dịch
+            </a>
+
+        </div>
+
+        <div class="logout-area">
+            <button onclick="logout()" class="logout-button">
+                🚪 Đăng xuất
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="main-content">
+
+        <header class="top-header">
+
+            <div>
+                <h2>Dashboard</h2>
+                <p>Tổng quan hệ thống Smart Loyalty</p>
+            </div>
+
+            <div class="admin-info">
+                <div class="admin-avatar">A</div>
+                <div>
+                    <strong>Admin</strong>
+                    <small>Quản trị viên</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <main class="dashboard">
+
+            <h1>Xin chào, Admin 👋</h1>
+            <p class="dashboard-description">
+                Đây là tổng quan hoạt động của hệ thống.
+            </p>
+
+            <div class="statistics">
+
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div>
+                        <p>Tổng khách hàng</p>
+                        <h2 id="statTotalCustomers">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🛒</div>
+                    <div>
+                        <p>Tổng giao dịch</p>
+                        <h2 id="statTotalTransactions">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div>
+                        <p>Doanh thu</p>
+                        <h2 id="statTotalRevenue">0đ</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div>
+                        <p>Điểm đã tích</p>
+                        <h2 id="statTotalPoints">0</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+                    <h2>Giao dịch gần đây</h2>
+                    <a href="transactions.html">Xem tất cả →</a>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Khách hàng</th>
+                                <th>Số tiền</th>
+                                <th>Điểm</th>
+                                <th>Thời gian</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentTransactionsTable">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
